@@ -20,13 +20,6 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
     restart: always
-  sonar:
-    build: sonarclient
-    env_file: configuration.env
-    depends_on:
-      - influxdb
-    links:
-      - influxdb
   
 volumes:
   grafana_data: {}

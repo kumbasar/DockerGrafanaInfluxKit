@@ -35,10 +35,6 @@ pipeline {
       steps {
         script {
           sh """
-            #!/bin/bash
-            set -x
-            set -e
- 
             docker-compose down || true
             sleep 10
           """
@@ -51,10 +47,6 @@ pipeline {
         script {
  
           sh """
-            #!/bin/bash
-            set -x
-            set -e
-           
             DATE=`date '+%d%m%Y-%H%M%S'`
             
             docker run --rm -t -v ${INFLUXDB_VOLUME_NAME}:/volume -v \$(pwd):/backup debian tar czvf /backup/${INFLUXDB_VOLUME_NAME}_\${DATE}.tar.gz /volume/
@@ -69,10 +61,6 @@ pipeline {
       steps {
         script {
           sh """
-            #!/bin/bash
-            set -x
-            set -e
- 
             docker-compose build
           """
         }
@@ -83,10 +71,6 @@ pipeline {
       steps {
         script {
           sh """
-            #!/bin/bash
-            set -x
-            set -e
- 
             nohup docker-compose up -d
           """
         }
