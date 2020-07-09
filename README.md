@@ -1,7 +1,6 @@
+# Docker Grafana & InfluxDb 
 
-
-
-# [WIP] Docker Grafana, InfluxDb & SonarQube Client
+Sonar client has been removed. The `influxdb` plugin supports now supports all basic [sonarqube metrics](https://github.com/jenkinsci/influxdb-plugin#sonarqube_data-since-111).
 
 * Start up
 ```
